@@ -78,7 +78,7 @@ export default function AuthPage() {
         <Card className="w-full max-w-md">
           <CardHeader className="space-y-1 text-center">
             <div className="flex justify-center mb-4">
-              <SicrediLogo className="h-16" />
+              
             </div>
             <CardTitle className="text-2xl font-bold">Área Administrativa</CardTitle>
             <CardDescription>
@@ -89,7 +89,7 @@ export default function AuthPage() {
             <Tabs defaultValue="login" value={activeTab} onValueChange={setActiveTab}>
               <TabsList className="grid w-full grid-cols-2 mb-4">
                 <TabsTrigger value="login">Login</TabsTrigger>
-                <TabsTrigger value="register">Registro</TabsTrigger>
+          
               </TabsList>
               
               {/* Login Form */}
@@ -132,55 +132,7 @@ export default function AuthPage() {
               </TabsContent>
               
               {/* Register Form */}
-              <TabsContent value="register">
-                <form onSubmit={registerForm.handleSubmit(onRegisterSubmit)}>
-                  <div className="space-y-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="reg-username">Nome de Usuário</Label>
-                      <Input 
-                        id="reg-username" 
-                        type="text" 
-                        placeholder="seu_usuario" 
-                        {...registerForm.register("username")} 
-                      />
-                      {registerForm.formState.errors.username && (
-                        <p className="text-red-500 text-sm">{registerForm.formState.errors.username.message}</p>
-                      )}
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="reg-password">Senha</Label>
-                      <Input 
-                        id="reg-password" 
-                        type="password" 
-                        placeholder="••••••••" 
-                        {...registerForm.register("password")} 
-                      />
-                      {registerForm.formState.errors.password && (
-                        <p className="text-red-500 text-sm">{registerForm.formState.errors.password.message}</p>
-                      )}
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="confirm-password">Confirmar Senha</Label>
-                      <Input 
-                        id="confirm-password" 
-                        type="password" 
-                        placeholder="••••••••" 
-                        {...registerForm.register("confirmPassword")} 
-                      />
-                      {registerForm.formState.errors.confirmPassword && (
-                        <p className="text-red-500 text-sm">{registerForm.formState.errors.confirmPassword.message}</p>
-                      )}
-                    </div>
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-[#33820D] hover:bg-[#276c0f]"
-                      disabled={registerMutation.isPending}
-                    >
-                      {registerMutation.isPending ? "Registrando..." : "Registrar"}
-                    </Button>
-                  </div>
-                </form>
-              </TabsContent>
+             
             </Tabs>
           </CardContent>
           <CardFooter>
